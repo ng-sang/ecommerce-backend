@@ -51,7 +51,7 @@ export const getProducts = async (
 
 export const addVariant = async (req: Request, res: Response): Promise<any> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const variant = await createProductVariant(id, req.body);
     return res.status(201).json({ status: "success", data: variant });
   } catch (error: any) {
@@ -68,7 +68,7 @@ export const editProduct = async (
   res: Response,
 ): Promise<any> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const updated = await updateProduct(id, req.body);
     return res.status(200).json({
       status: "success",
@@ -91,7 +91,7 @@ export const getProductById = async (
   res: Response,
 ): Promise<any> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     // Tìm sản phẩm theo ID, lôi kèm cả nhãn hàng, danh mục và các phiên bản cấu hình
     const product = await prisma.product.findUnique({
