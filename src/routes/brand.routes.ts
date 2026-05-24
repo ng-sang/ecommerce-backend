@@ -1,6 +1,6 @@
 import express from "express";
-import { addBrand, getBrands } from "../controllers/brand.controller.js";
-import { verifyToken, isAdmin } from "../middlewares/auth.middleware.js";
+import { addBrand, getBrands } from "../controllers/brand.controller";
+import { verifyToken, isAdmin } from "../middlewares/auth.middleware";
 
 const router = express.Router();
 

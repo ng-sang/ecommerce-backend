@@ -4,9 +4,9 @@ import {
   addProduct,
   addVariant,
   editProduct,
-  getProductById, // <-- Đã import thêm hàm này
-} from "../controllers/product.controller.js";
-import { verifyToken, isAdmin } from "../middlewares/auth.middleware.js";
+  getProductById,
+} from "../controllers/product.controller";
+import { verifyToken, isAdmin } from "../middlewares/auth.middleware";
 
 const router = express.Router();
 
