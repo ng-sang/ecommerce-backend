@@ -5,9 +5,9 @@ import {
   getMe,
   forgotPassword,
   resetPassword,
-} from "../controllers/auth.controller";
+} from "../controllers/auth.controller.js";
 // Chỉ cần dùng authMiddleware là đủ "đô" rồi Sếp nhé
-import { verifyToken } from "../middlewares/auth.middleware";
+import { verifyToken } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 

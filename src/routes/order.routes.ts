@@ -6,8 +6,8 @@ import {
   changeOrderStatus,
   createPaymentUrl,
   vnpayReturn,
-} from "../controllers/order.controller";
-import { verifyToken, isAdmin } from "../middlewares/auth.middleware";
+} from "../controllers/order.controller.js";
+import { verifyToken, isAdmin } from "../middlewares/auth.middleware.js";
 
 // ==========================================
 // 🔍 MÁY QUÉT TÌM LỖI UNDEFINED CỦA HỆ THỐNG
