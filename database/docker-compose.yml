@@ -1,0 +1,21 @@
+name: ecommerce_db
+services:
+  postgres_db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: f8
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: ecommerce # <-- Thêm dòng này để nó tự tạo sẵn database tên là ecommerce
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  redis:
+    image: redis
+    ports:
+      - 6380:6379
+
+volumes:
+  postgres_db:
