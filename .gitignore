@@ -3,3 +3,10 @@ node_modules
 .env
 
 /generated/prisma
+**Thêm thư mục này vào file `.gitignore`:**
+    *   Sếp mở file `.gitignore` (nếu chưa có thì tạo mới file tên là `.gitignore` ở thư mục gốc).
+    *   Thêm dòng này vào cuối file:
+        ```text
+        uploads/
+        .env
+        node_modules/
