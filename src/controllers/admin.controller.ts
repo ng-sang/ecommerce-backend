@@ -12,7 +12,7 @@ export const addProduct = async (req: Request, res: Response) => {
 
 export const updateProduct = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const updatedProduct = await AdminService.updateProductData(id, req.body);
     res.status(200).json({ status: "success", data: updatedProduct });
   } catch (error: any) {
@@ -40,7 +40,7 @@ export const fetchAllOrders = async (req: Request, res: Response) => {
 
 export const changeOrderStatus = async (req: Request, res: Response) => {
   try {
-    const { orderId } = req.params;
+    const orderId = req.params.orderId as string;
     const { status } = req.body;
     const updated = await AdminService.updateOrderStatus(orderId, status);
     res.status(200).json({ status: "success", data: updated });
@@ -62,7 +62,7 @@ export const getDashboard = async (req: Request, res: Response) => {
 
 export const removeProduct = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     await AdminService.deleteProduct(id);
     res.status(200).json({ status: "success", message: "Đã xóa thành công!" });
   } catch (error: any) {
