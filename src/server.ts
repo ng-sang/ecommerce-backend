@@ -7,17 +7,17 @@ import cookieParser from "cookie-parser";
 import { createServer } from "http"; // Bổ sung thư viện http của Node.js
 
 // Import Routes
-import authRoutes from "./routes/auth.routes";
-import categoryRoutes from "./routes/category.routes";
-import brandRoutes from "./routes/brand.routes";
-import productRoutes from "./routes/product.routes";
-import cartRoutes from "./routes/cart.routes";
-import uploadRoutes from "./routes/upload.routes";
-import orderRoutes from "./routes/order.routes";
-import adminRoutes from "./routes/admin.routes";
+import authRoutes from "./routes/auth.routes.js";
+import categoryRoutes from "./routes/category.routes.js";
+import brandRoutes from "./routes/brand.routes.js";
+import productRoutes from "./routes/product.routes.js";
+import cartRoutes from "./routes/cart.routes.js";
+import uploadRoutes from "./routes/upload.routes.js";
+import orderRoutes from "./routes/order.routes.js";
+import adminRoutes from "./routes/admin.routes.js";
 
 // Import Utils (Socket & Redis)
-import { initSocket } from "./utils/socket";
+import { initSocket } from "./utils/socket.js";
 // import { connectRedis } from "./utils/redis";
 
 const app = express();
