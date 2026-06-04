@@ -5,9 +5,11 @@ export const sendEmail = async (options: {
   subject: string;
   message: string;
 }) => {
-  // 1. Cấu hình trạm phát sóng (Dùng Gmail)
+  // 1. Cấu hình trạm phát sóng (Sử dụng cấu hình SMTP tường minh thay vì service)
   const transporter = nodemailer.createTransport({
-    service: "Gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, // Bắt buộc true khi dùng port 465 để mã hóa dữ liệu
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -19,7 +21,7 @@ export const sendEmail = async (options: {
     from: '"Cửa Hàng Điện Thoại VIP" <no-reply@cuahang.com>',
     to: options.email,
     subject: options.subject,
-    html: options.message, // Dùng định dạng HTML để trang trí email cho đẹp
+    html: options.message,
   };
 
   // 3. Tiến hành gửi
