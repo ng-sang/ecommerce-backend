@@ -14,6 +14,10 @@ export const sendEmail = async (options: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
+    connectionTimeout: 10000, // Chỉ đợi kết nối tối đa 10 giây
+    greetingTimeout: 10000, // Chỉ đợi Google chào hỏi 10 giây
+    logger: true, // Bật tính năng ghi nhật ký
+    debug: true, // Bật chế độ soi lỗi chi tiết
   });
 
   // 2. Nội dung bức thư
